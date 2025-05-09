@@ -1,0 +1,138 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+@layer utilities {
+  .bg-surface {
+    background-color: #1C1C1C;
+  }
+  .text-primary {
+    color: rgb(209, 253, 96);
+  }
+
+  .bg-primary {
+    background-color: rgb(209, 253, 96);
+  }
+
+  .border-primary {
+    border-color: rgba(209, 253, 96, 0.3);
+  }
+
+  .shadow-primary {
+    box-shadow: 0 0 0 2px rgba(209, 253, 96, 0.4);
+  }
+
+  .card-dark {
+    @apply text-gray-100 border rounded-lg;
+    border-color: rgba(209, 253, 96, 0.3);
+    background-color: #1C1C1C;
+    box-shadow: 0 0 0 2px rgba(209, 253, 96, 0.4);
+  }
+
+  .button-primary {
+    @apply text-[#1C1C1C] rounded-md px-3 py-2 cursor-pointer transition;
+    background-color: rgb(209, 253, 96);
+    border-color: rgba(209, 253, 96, 0.3);
+    box-shadow: 0 0 0 2px rgba(209, 253, 96, 0.4);
+    border-width: 1px;
+    border-style: solid;
+  }
+
+  .table-header {
+    background-color: #2a2a2a;
+  }
+
+  .table-row-hover:hover {
+    background-color: #2a2a2a;
+  }
+
+  .scaler-card {
+    opacity: 1;
+    background-image: linear-gradient(
+      140deg,
+      rgba(90, 90, 90, 0.28) 0%,
+      rgba(28, 28, 28, 1) 100%
+    );
+  }
+
+  .text-scaler-green {
+    opacity: 1;
+    color: rgba(209, 253, 96, 1);
+    font-weight: 700;
+    font-style: Bold;
+  }
+
+  .border-light-green {
+    border-color: rgba(209, 253, 96, 0.3);
+  }
+
+  .scaler-button {
+    border-radius: 15px;
+    opacity: 1;
+    background-image: linear-gradient(
+      140deg,
+      rgba(90, 90, 90, 0.28) 0%,
+      rgba(28, 28, 28, 1) 100%
+    );
+  }
+
+  .button-primary {
+    @apply text-[#1C1C1C] rounded-md px-4 py-2 font-medium cursor-pointer transition;
+    background-color: rgb(209, 253, 96);
+    border: 1px solid rgba(209, 253, 96, 0.3);
+    box-shadow: 0 0 0 2px rgba(209, 253, 96, 0.4);
+  }
+
+  .bg-surface {
+    background-color: #1C1C1C;
+  }
+
+  .text-primary {
+    color: rgb(209, 253, 96);
+  }
+
+  .border-primary {
+    border-color: rgba(209, 253, 96, 0.3);
+  }
+
+  .hover\:bg-primary:hover {
+    background-color: rgb(209, 253, 96);
+  }
+
+  .hover\:text-dark:hover {
+    color: #1C1C1C;
+  }
+  .text-primary {
+    color: rgb(209, 253, 96);
+  }
+
+  .spinner-green {
+    border-color: rgb(209, 253, 96);
+    border-top-color: transparent;
+  }
+  
+}
