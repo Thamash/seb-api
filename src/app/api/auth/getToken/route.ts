@@ -30,7 +30,9 @@ export async function GET() {
     });
 
     const tokenData = await tokenResponse.json();
-    cookieStorage.set('access_token', tokenData.access_token);
+    cookieStorage.set('access_token', tokenData.access_token, {
+      expires: new Date(Date.now() + 10 * 60 * 1000)
+    });
 
     return NextResponse.json({
       success: true,

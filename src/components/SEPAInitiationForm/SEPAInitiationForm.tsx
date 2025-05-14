@@ -75,6 +75,13 @@ export default function SEPAInitiationForm() {
     let delayedRedirect = false;
 
     try {
+      const tokenCheck = await fetch('/api/auth/check');
+      const authData = await tokenCheck.json();
+
+      if (!authData.authenticated) {
+        router.push('/');
+        return;
+      }
       const data = await fetchWithLoading<{
         paymentId: string;
         templateId: string;

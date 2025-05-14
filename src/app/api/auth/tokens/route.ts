@@ -54,7 +54,7 @@ export async function POST(request: Request): Promise<NextResponse> {
       secure: process.env.NODE_ENV === 'production',
       sameSite: 'lax',
       path: '/',
-      maxAge: tokenResponse.expires_in || 3600,
+      maxAge: 600,
     });
 
     return responseWithCookie;
